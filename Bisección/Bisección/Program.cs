@@ -10,6 +10,7 @@ namespace Bisección
     {
         static void Main(string[] args)
         {
+
         }
     }
 }
