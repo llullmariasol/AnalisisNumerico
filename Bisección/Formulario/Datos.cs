@@ -39,10 +39,10 @@ namespace Formulario
             Bisección = new Bisección(izq, der, iter, tole, 0, 0, 0, 0);
             Solución solu = Bisección.Calcular(izq, der, iter, tole);
             label10.Text = solu.iteru.ToString();
-            label11.Text = solu.erel.ToString();
+            label11.Text = Convert.ToDecimal(solu.erel).ToString();
             label12.Text = solu.sol.ToString();
             label13.Text = solu.Error;
-            if (solu.Error != null)
+            if (solu.Error == null)
             {
                 textBox1.Text = "";
                 textBox2.Text = "";

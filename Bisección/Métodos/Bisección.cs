@@ -10,7 +10,7 @@ namespace Métodos
     {
         public static float f(float x)
         {
-            return x - 4;
+            return (x*x*x) - (2*x) + 2;
         }
 
         public float izq { get; set; }
@@ -71,18 +71,12 @@ namespace Métodos
                         cont = cont + 1;
                         error = Math.Abs((xr - xant) / xr);
                     }
-
                     s.sol = xr;
                     s.iteru = cont;
                     s.erel = error;            
-                }
-                
-
-
-            }
-               
+                }               
+            }       
             return s;
         }
-
     }
 }

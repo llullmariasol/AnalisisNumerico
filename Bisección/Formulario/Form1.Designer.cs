@@ -36,39 +36,43 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(367, 58);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(260, 56);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(299, 42);
             this.button1.TabIndex = 0;
-            this.button1.Text = "UNIDAD 1";
+            this.button1.Text = "UNIDAD 1: RAÍCES DE FUNCIONES";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(367, 125);
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(260, 149);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(299, 42);
             this.button2.TabIndex = 1;
-            this.button2.Text = "UNIDAD 2";
+            this.button2.Text = "UNIDAD 2: SISTEMAS DE ECUACIONES";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(367, 193);
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(260, 242);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(299, 42);
             this.button3.TabIndex = 2;
-            this.button3.Text = "UNIDAD 3";
+            this.button3.Text = "UNIDAD 3: REGRESIÓN E INTERPOLACIÓN";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(367, 271);
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(260, 335);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.Size = new System.Drawing.Size(299, 42);
             this.button4.TabIndex = 3;
-            this.button4.Text = "UNIDAD 4";
+            this.button4.Text = "UNIDAD 4: INTEGRACIÓN NUMÉRICA";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // Form1
@@ -81,7 +85,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Análisis Numérico";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
