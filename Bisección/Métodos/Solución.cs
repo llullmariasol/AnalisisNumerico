@@ -9,8 +9,17 @@ namespace Métodos
     public class Solución
     {
         public int iteru { get; set; }
-        public decimal erel { get; set; }
-        public decimal sol { get; set; }
+        public float erel { get; set; }
+        public float sol { get; set; }
+        public string Error { get; set; }
+
+        public Solución()
+        {
+            iteru = 0;
+            erel = 0;
+            sol = 0;
+            Error = null;
+        }
 
     }
 }
