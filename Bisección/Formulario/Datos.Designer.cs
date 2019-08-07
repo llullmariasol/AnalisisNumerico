@@ -165,27 +165,27 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(414, 322);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(41, 13);
+            this.label10.Size = new System.Drawing.Size(13, 13);
             this.label10.TabIndex = 13;
-            this.label10.Text = "label10";
+            this.label10.Text = "0";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(414, 365);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(41, 13);
+            this.label11.Size = new System.Drawing.Size(13, 13);
             this.label11.TabIndex = 14;
-            this.label11.Text = "label11";
+            this.label11.Text = "0";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(414, 408);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(41, 13);
+            this.label12.Size = new System.Drawing.Size(13, 13);
             this.label12.TabIndex = 15;
-            this.label12.Text = "label12";
+            this.label12.Text = "0";
             // 
             // button1
             // 
@@ -203,9 +203,9 @@
             this.label13.ForeColor = System.Drawing.Color.Red;
             this.label13.Location = new System.Drawing.Point(367, 247);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(41, 13);
+            this.label13.Size = new System.Drawing.Size(29, 13);
             this.label13.TabIndex = 17;
-            this.label13.Text = "label13";
+            this.label13.Text = "Error";
             // 
             // Datos
             // 

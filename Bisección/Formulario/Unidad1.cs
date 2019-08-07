@@ -34,5 +34,12 @@ namespace Formulario
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Datos datos = new Datos();
+            datos.Owner = this;
+            datos.Show();
+        }
     }
 }
