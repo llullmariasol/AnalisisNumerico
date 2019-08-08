@@ -22,6 +22,7 @@ namespace Formulario
         {
             Datos datos = new Datos();
             datos.Owner = this;
+            datos.Text = "Datos Bisección";
             datos.Show();
         }
 
@@ -39,6 +40,7 @@ namespace Formulario
         {
             Datos datos = new Datos();
             datos.Owner = this;
+            datos.Text = "Datos Regla Falsa";
             datos.Show();
         }
     }

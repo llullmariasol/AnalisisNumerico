@@ -39,7 +39,7 @@ namespace Métodos
             Solución s = new Solución();
             if (f(izq)*f(der)>0)
             {
-                s.Error ="Error al calcular la raíz"; //poner todos los campos en 0 del formulario
+                s.Error ="Error al calcular la raíz";
             }
             else
             {
