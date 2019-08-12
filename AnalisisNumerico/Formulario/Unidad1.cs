@@ -55,5 +55,12 @@ namespace Formulario
             datos.Owner = this;
             datos.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Newton newton = new Newton();
+            newton.Owner = this;
+            newton.Show();
+        }
     }
 }
