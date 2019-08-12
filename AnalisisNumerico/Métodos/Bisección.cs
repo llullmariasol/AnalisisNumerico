@@ -10,7 +10,8 @@ namespace Métodos
     {
         public static float f(float x)
         {
-            return (x*x*x) - (2*x) + 2;
+            return (float)(Math.Exp(x) - 2);
+           // return (x*x*x) - (2*x) + 2;
         }
 
         public float izq { get; set; }

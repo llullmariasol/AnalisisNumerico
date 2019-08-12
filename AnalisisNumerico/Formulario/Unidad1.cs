@@ -43,5 +43,17 @@ namespace Formulario
             datos.Text = "Datos Regla Falsa";
             datos.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DatosSecante datos = new DatosSecante();
+            datos.Owner = this;
+            datos.Show();
+        }
     }
 }
