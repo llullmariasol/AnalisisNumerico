@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace Métodos
 {
-    public class ReglaFalsa
+    public class Bisección
     {
         public static float f(float x)
         {
-            return (x * x * x) - (2 * x) + 2;
+            return (float)(Math.Exp(x) - 2);
+           // return (x*x*x) - (2*x) + 2;
         }
 
         public float izq { get; set; }
@@ -22,7 +23,7 @@ namespace Métodos
         public float xr { get; set; }
         public float error { get; set; }
 
-        public ReglaFalsa(float i, float d, int it, float to, int c, float x, float xrr, float er)
+        public Bisección(float i, float d, int it, float to, int c, float x, float xrr, float er)
         {
             izq = i;
             der = d;
@@ -31,15 +32,15 @@ namespace Métodos
             cont = c;
             xant = x;
             xr = xrr;
-            error = er;
+            error = er;   
         }
-
-        public Solución Calcular(float izq, float der, int iter, float tole)
+        
+        public Solución Calcular (float izq, float der, int iter, float tole)
         {
             Solución s = new Solución();
-            if (f(izq) * f(der) > 0)
+            if (f(izq)*f(der)>0)
             {
-                s.Error = "Error al calcular la raíz"; //poner todos los campos en 0 del formulario
+                s.Error ="Error al calcular la raíz";
             }
             else
             {
@@ -55,7 +56,7 @@ namespace Métodos
                     cont = 0;
                     xant = 0;
 
-                    xr = (f(izq) * der - f(der) * izq) / (f(izq) - f(der));
+                    xr = (izq + der) / 2;
                     cont = cont + 1;
                     error = Math.Abs((xr - xant) / xr);
 
@@ -67,15 +68,15 @@ namespace Métodos
                             izq = xr;
                         xant = xr;
 
-                        xr = (f(izq) * der - f(der) * izq) / (f(izq) - f(der));
+                        xr = (izq + der) / 2;
                         cont = cont + 1;
                         error = Math.Abs((xr - xant) / xr);
                     }
                     s.sol = xr;
                     s.iteru = cont;
-                    s.erel = error;
-                }
-            }
+                    s.erel = error;            
+                }               
+            }       
             return s;
         }
     }

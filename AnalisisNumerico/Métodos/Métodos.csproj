@@ -45,6 +45,7 @@
     <Compile Include="Newton-Raphson.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReglaFalsa.cs" />
+    <Compile Include="Secante.cs" />
     <Compile Include="Solución.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

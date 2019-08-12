@@ -22,6 +22,7 @@ namespace Formulario
         {
             Datos datos = new Datos();
             datos.Owner = this;
+            datos.Text = "Datos Bisección";
             datos.Show();
         }
 
@@ -38,6 +39,19 @@ namespace Formulario
         private void button2_Click(object sender, EventArgs e)
         {
             Datos datos = new Datos();
+            datos.Owner = this;
+            datos.Text = "Datos Regla Falsa";
+            datos.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DatosSecante datos = new DatosSecante();
             datos.Owner = this;
             datos.Show();
         }

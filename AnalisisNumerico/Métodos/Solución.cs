@@ -20,6 +20,5 @@ namespace Métodos
             sol = 0;
             Error = null;
         }
-
     }
 }
