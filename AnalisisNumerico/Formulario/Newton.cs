@@ -34,7 +34,7 @@ namespace Formulario
             label11.Text =  solu.sol.ToString();
             label2.Text = Convert.ToDecimal(solu.erel).ToString();
             label13.Text = solu.Error;
-            if (solu.Error == null)
+            if (solu.Error != null)
             {
                 textBox1.Text = "";
                 textBox2.Text = "";

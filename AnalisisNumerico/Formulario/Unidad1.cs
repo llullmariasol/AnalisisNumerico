@@ -56,7 +56,7 @@ namespace Formulario
             datos.Show();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void Button3_Click(object sender, EventArgs e)
         {
             Newton newton = new Newton();
             newton.Owner = this;

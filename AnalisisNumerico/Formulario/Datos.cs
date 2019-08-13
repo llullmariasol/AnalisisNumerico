@@ -51,13 +51,18 @@ namespace Formulario
             label11.Text = Convert.ToDecimal(solu.erel).ToString();
             label12.Text = solu.sol.ToString();
             label13.Text = solu.Error;
-            if (solu.Error == null)
+            if (solu.Error != null)
             {
                 textBox1.Text = "";
                 textBox2.Text = "";
                 textBox3.Text = "";
                 textBox4.Text = "";
             }
+        }
+
+        private void volver_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
