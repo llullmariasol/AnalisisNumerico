@@ -8,22 +8,21 @@ namespace Métodos
 {
     public class Secante
     {
-        public static float f(float x)
+        public static double f(double x)
         {
-            // (float)Math.Log(x +1.5);
-            return (float)Math.Pow(x, 0.5);
+            return (Math.Log(x)) + (1 / x) - 3;
         }
 
-        public float x1 { get; set; }
-        public float x2 { get; set; }
+        public double x1 { get; set; }
+        public double x2 { get; set; }
         public int iter { get; set; }
-        public float tole { get; set; }
+        public double tole { get; set; }
         public int cont { get; set; }
-        public float xant { get; set; }
-        public float xr { get; set; }
-        public float error { get; set; }
+        public double xant { get; set; }
+        public double xr { get; set; }
+        public double error { get; set; }
 
-        public Secante(float xi1, float xi2, int it, float tol, int c, float x, float xrr, float er)
+        public Secante(double xi1, double xi2, int it, double tol, int c, double x, double xrr, double er)
         {
             x1 = xi1;
             x2 = xi2;
@@ -35,7 +34,7 @@ namespace Métodos
             error = er;
         }
 
-        public Solución Calcular(float x1, float x2, int iter, float tole)
+        public Solución Calcular(double x1, double x2, int iter, double tole)
         {
             Solución s = new Solución();
             if (x1 < x2)
@@ -47,7 +46,7 @@ namespace Métodos
                 if (f(x1) == f(x2))
                 {
                     s.Error = "Mal elegidos los puntos";
-                } //ver también si está fuera del dominio
+                } 
                 else
                 {
                     if (f(x1) == 0 || f(x2) == 0) //la raíz es x1 o x2
@@ -59,26 +58,43 @@ namespace Métodos
                     }
                     else //buscar raíz
                     {
-                        cont = 0;
-                        xant = 0;
-
-                        cont = cont + 1;
-                        xr = ((f(x2) * x1) - (f(x1) * x2)) / (f(x2) - f(x1));
-                        error = Math.Abs((xr - xant) / xr);
-
-                        while ((Math.Abs(f(xr)) >= tole) && (cont <= iter) && (error >= tole))
+                        if (f(x1).ToString() == "NaN" || f(x1).ToString() == "NaN")
                         {
-                            x1 = x2;
-                            x2 = xr;
-                            xant = xr;
+                            s.Error = "Un punto o ambos está/n fuera del dominio";
+                        }
+                        else
+                        {
+                            cont = 0;
+                            xant = 0;
 
                             cont = cont + 1;
                             xr = ((f(x2) * x1) - (f(x1) * x2)) / (f(x2) - f(x1));
                             error = Math.Abs((xr - xant) / xr);
-                        }
-                        s.sol = xr;
-                        s.iteru = cont;
-                        s.erel = error;
+
+                            while ((Math.Abs(f(xr)) >= tole) && (cont <= iter) && (error >= tole))
+                            {
+                                x1 = x2;
+                                x2 = xr;
+                                xant = xr;
+
+                                cont = cont + 1;
+                                xr = ((f(x2) * x1) - (f(x1) * x2)) / (f(x2) - f(x1));
+                                error = Math.Abs((xr - xant) / xr);
+                                if (f(x1) == f(x2))
+                                {
+                                    s.Error = "Mal elegidos los puntos";
+                                    cont = 102;
+                                }
+                            }
+                            s.sol = xr;
+                            s.iteru = cont;
+                            s.erel = error;
+
+                            if (f(xr).ToString() == "NaN")
+                            {
+                                s.Error = "Mal elegidos los puntos";
+                            }
+                        }           
                     }
                 }
             }        

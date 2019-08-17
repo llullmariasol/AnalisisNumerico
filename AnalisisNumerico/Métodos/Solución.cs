@@ -9,8 +9,8 @@ namespace Métodos
     public class Solución
     {
         public int iteru { get; set; }
-        public float erel { get; set; }
-        public float sol { get; set; }
+        public double erel { get; set; }
+        public double sol { get; set; }
         public string Error { get; set; }
 
         public Solución()

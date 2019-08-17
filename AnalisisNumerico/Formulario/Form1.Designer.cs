@@ -43,6 +43,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "UNIDAD 1: RAÍCES DE FUNCIONES";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseWaitCursor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
@@ -54,6 +55,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "UNIDAD 2: SISTEMAS DE ECUACIONES";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseWaitCursor = true;
             // 
             // button3
             // 
@@ -64,6 +66,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "UNIDAD 3: REGRESIÓN E INTERPOLACIÓN";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseWaitCursor = true;
             // 
             // button4
             // 
@@ -74,6 +77,7 @@
             this.button4.TabIndex = 3;
             this.button4.Text = "UNIDAD 4: INTEGRACIÓN NUMÉRICA";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.UseWaitCursor = true;
             // 
             // Form1
             // 

@@ -8,21 +8,21 @@ namespace Métodos
 {
     public class ReglaFalsa
     {
-        public static float f(float x)
+        public static double f(double x)
         {
             return (x * x * x) - (2 * x) + 2;
         }
 
-        public float izq { get; set; }
-        public float der { get; set; }
+        public double izq { get; set; }
+        public double der { get; set; }
         public int iter { get; set; }
-        public float tole { get; set; }
+        public double tole { get; set; }
         public int cont { get; set; }
-        public float xant { get; set; }
-        public float xr { get; set; }
-        public float error { get; set; }
+        public double xant { get; set; }
+        public double xr { get; set; }
+        public double error { get; set; }
 
-        public ReglaFalsa(float i, float d, int it, float to, int c, float x, float xrr, float er)
+        public ReglaFalsa(double i, double d, int it, double to, int c, double x, double xrr, double er)
         {
             izq = i;
             der = d;
@@ -34,7 +34,7 @@ namespace Métodos
             error = er;
         }
 
-        public Solución Calcular(float izq, float der, int iter, float tole)
+        public Solución Calcular(double izq, double der, int iter, double tole)
         {
             Solución s = new Solución();
             if (f(izq) * f(der) > 0)

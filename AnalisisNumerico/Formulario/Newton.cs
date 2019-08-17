@@ -29,16 +29,28 @@ namespace Formulario
             int iter = (int)Convert.ToSingle(textBox3.Text);
             double tole = Convert.ToSingle(textBox2.Text);
             Newton_Raphson newton = new Newton_Raphson(xini,iter,tole);
-            Solución solu = newton.Calcular();
-            label10.Text = solu.iteru.ToString();
-            label11.Text =  solu.sol.ToString();
-            label2.Text = Convert.ToDecimal(solu.erel).ToString();
+            Solución solu = newton.Calcular(xini, iter, tole);
+
+            if (solu.sol.ToString() == "NaN" || solu.erel.ToString() == "NaN")
+            {
+                solu.Error = "Mal elegidos los puntos";
+            }
+            else
+            {
+                label10.Text = solu.iteru.ToString();        
+                label11.Text = solu.sol.ToString();
+                label2.Text = Convert.ToDecimal(solu.erel).ToString();
+            }
             label13.Text = solu.Error;
+
             if (solu.Error != null)
             {
-                textBox1.Text = "";
-                textBox2.Text = "";
-                textBox3.Text = "";
+                //textBox1.Text = "";
+                //textBox2.Text = "";
+                //textBox3.Text = "";
+                label10.Text = "-";
+                label11.Text = "-";
+                label2.Text = "-";
             }
         }
 

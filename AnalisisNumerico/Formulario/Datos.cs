@@ -57,12 +57,10 @@ namespace Formulario
                 textBox2.Text = "";
                 textBox3.Text = "";
                 textBox4.Text = "";
+                label10.Text = "-";
+                label11.Text = "-";
+                label2.Text = "-";
             }
-        }
-
-        private void volver_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -191,20 +191,20 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(483, 81);
+            this.label2.Location = new System.Drawing.Point(439, 81);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 13);
+            this.label2.Size = new System.Drawing.Size(124, 13);
             this.label2.TabIndex = 19;
-            this.label2.Text = "Punto inicial 2";
+            this.label2.Text = "Punto inicial 2 (izquierda)";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(176, 81);
+            this.label1.Location = new System.Drawing.Point(136, 81);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 13);
+            this.label1.Size = new System.Drawing.Size(121, 13);
             this.label1.TabIndex = 18;
-            this.label1.Text = "Punto inicial 1";
+            this.label1.Text = "Punto inicial 1 (derecha)";
             // 
             // DatosSecante
             // 
