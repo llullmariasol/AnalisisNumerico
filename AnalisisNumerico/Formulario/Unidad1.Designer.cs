@@ -38,22 +38,24 @@
             // 
             // botonbiseccion
             // 
-            this.botonbiseccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonbiseccion.Location = new System.Drawing.Point(157, 172);
+            this.botonbiseccion.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.botonbiseccion.Font = new System.Drawing.Font("Gill Sans MT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonbiseccion.Location = new System.Drawing.Point(99, 82);
             this.botonbiseccion.Name = "botonbiseccion";
             this.botonbiseccion.Size = new System.Drawing.Size(150, 41);
             this.botonbiseccion.TabIndex = 0;
             this.botonbiseccion.Text = "BISECCIÓN";
-            this.botonbiseccion.UseVisualStyleBackColor = true;
+            this.botonbiseccion.UseVisualStyleBackColor = false;
             this.botonbiseccion.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(132, 64);
+            this.label1.Font = new System.Drawing.Font("Gill Sans MT", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label1.Location = new System.Drawing.Point(27, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(201, 20);
+            this.label1.Size = new System.Drawing.Size(327, 40);
             this.label1.TabIndex = 1;
             this.label1.Text = "MÉTODOS CERRADOS";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -61,51 +63,55 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(479, 64);
+            this.label2.Font = new System.Drawing.Font("Gill Sans MT", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label2.Location = new System.Drawing.Point(433, 20);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(191, 20);
+            this.label2.Size = new System.Drawing.Size(311, 40);
             this.label2.TabIndex = 2;
             this.label2.Text = "MÉTODOS ABIERTOS";
             // 
             // botonreglafalsa
             // 
-            this.botonreglafalsa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonreglafalsa.Location = new System.Drawing.Point(157, 308);
+            this.botonreglafalsa.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.botonreglafalsa.Font = new System.Drawing.Font("Gill Sans MT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botonreglafalsa.Location = new System.Drawing.Point(99, 171);
             this.botonreglafalsa.Name = "botonreglafalsa";
             this.botonreglafalsa.Size = new System.Drawing.Size(150, 41);
             this.botonreglafalsa.TabIndex = 3;
             this.botonreglafalsa.Text = "REGLA FALSA";
-            this.botonreglafalsa.UseVisualStyleBackColor = true;
+            this.botonreglafalsa.UseVisualStyleBackColor = false;
             this.botonreglafalsa.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(499, 172);
+            this.button3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button3.Font = new System.Drawing.Font("Gill Sans MT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(471, 82);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(150, 41);
+            this.button3.Size = new System.Drawing.Size(233, 41);
             this.button3.TabIndex = 4;
             this.button3.Text = "NEWTON - RAPHSON";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(499, 308);
+            this.button4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button4.Font = new System.Drawing.Font("Gill Sans MT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(510, 171);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(150, 41);
             this.button4.TabIndex = 5;
             this.button4.Text = "SECANTE";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Unidad1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 259);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.botonreglafalsa);

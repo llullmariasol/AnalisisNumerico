@@ -24,11 +24,20 @@ namespace Formulario
         }
 
         private void button1_Click(object sender, EventArgs e)
-        { // double xin, int it, double to, int c, double x, double xrr, double er, double der            
+        { 
+        }
+
+        private void Newton_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {// double xin, int it, double to, int c, double x, double xrr, double er, double der            
             double xini = Convert.ToDouble(textBox1.Text);
             int iter = (int)Convert.ToSingle(textBox3.Text);
             double tole = Convert.ToSingle(textBox2.Text);
-            Newton_Raphson newton = new Newton_Raphson(xini,iter,tole);
+            Newton_Raphson newton = new Newton_Raphson(xini, iter, tole);
             Solución solu = newton.Calcular(xini, iter, tole);
 
             if (solu.sol.ToString() == "NaN" || solu.erel.ToString() == "NaN")
@@ -37,7 +46,7 @@ namespace Formulario
             }
             else
             {
-                label10.Text = solu.iteru.ToString();        
+                label10.Text = solu.iteru.ToString();
                 label11.Text = solu.sol.ToString();
                 label2.Text = Convert.ToDecimal(solu.erel).ToString();
             }
@@ -52,10 +61,6 @@ namespace Formulario
                 label11.Text = "-";
                 label2.Text = "-";
             }
-        }
-
-        private void Newton_Load(object sender, EventArgs e)
-        {
 
         }
     }
