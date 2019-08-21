@@ -10,7 +10,7 @@ namespace Métodos
     {
         public static double f(double x)
         {
-            return (double)(Math.Exp(x) - 2);
+            return ((12.5 * (x + 2)) / (x * x + 4 * x + 5)) + 2;
         }
 
         public double izq { get; set; }
