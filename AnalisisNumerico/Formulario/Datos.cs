@@ -48,7 +48,10 @@ namespace Formulario
                 solu = reglafalsa.Calcular(izq, der, iter, tole);
             }
             label10.Text = solu.iteru.ToString();
-            label11.Text = Convert.ToDecimal(solu.erel).ToString();
+            if (solu.erel.ToString() != "NaN")
+            {
+                label11.Text = Convert.ToDecimal(solu.erel).ToString();
+            }
             label12.Text = solu.sol.ToString();
             label13.Text = solu.Error;
             if (solu.Error != null)
@@ -59,7 +62,7 @@ namespace Formulario
                 textBox4.Text = "";
                 label10.Text = "-";
                 label11.Text = "-";
-                label2.Text = "-";
+                label12.Text = "-";
             }
         }
 

@@ -11,7 +11,10 @@ namespace Métodos
 
         public static double f(double x)
         {
-            return ((12.5 * (x + 2)) / (x * x + 4 * x + 5)) + 2;
+          //  return ((x * x) - (3 * x) + Math.Log(1 + x)) - (5 - Math.Pow(x, 0.5));
+            return (Math.Abs((x * x) - 4))+(2*x);
+            //return (Math.Log(x)) + (1 / x) - 3;
+            //return ((12.5 * (x + 2)) / (x * x + 4 * x + 5)) + 2;
         }
 
         public double xini { get; set; }
@@ -33,6 +36,7 @@ namespace Métodos
         public Solución Calcular(double xini, int iter, double tole)
         {
             cont = 0;
+            double function = f(xini);
             Solución s = new Solución();
             if (f(xini) == 0)
             {
