@@ -42,7 +42,7 @@ namespace Formulario
 
             if (solu.sol.ToString() == "NaN" || solu.erel.ToString() == "NaN")
             {
-                solu.Error = "Mal elegidos los puntos";
+                solu.Error = "Punto inicial mal elegido";
             }
             else
             {

@@ -11,10 +11,11 @@ namespace Métodos
 
         public static double f(double x)
         {
-          //  return ((x * x) - (3 * x) + Math.Log(1 + x)) - (5 - Math.Pow(x, 0.5));
-            return (Math.Abs((x * x) - 4))+(2*x);
-            //return (Math.Log(x)) + (1 / x) - 3;
+            //  return ((x * x) - (3 * x) + Math.Log(1 + x)) - (5 - Math.Pow(x, 0.5));
+            //  return (Math.Abs((x * x) - 4))+(2*x);
+            return (Math.Log(x)) + (1 / x) - 3;
             //return ((12.5 * (x + 2)) / (x * x + 4 * x + 5)) + 2;
+           // return ((12.5 * (x + 2)) / ((x * x) + (4 * x) + 5)) + 2;
         }
 
         public double xini { get; set; }
@@ -61,20 +62,19 @@ namespace Métodos
                     {
                         error = Math.Abs((xr - xant) / xr);
 
-                        while (Math.Abs(f(xr)) >= tole && cont <= iter && error >= tole) //Mientras f(xr) sea mayor a la tolerancia, el contador sea menor a las iteraciones y el error sea mayor a la tolerancia, se sigue buscando xr
+                        do
                         {
-                            xini = xr;                       
-                            xant = xr;
-                            cont = cont + 1;
 
-                            Deri = (f(xini + 0.0001) - f(xini)) / 0.0001;
+                            Deri = (((f(xini + tole) - f(xini))) / tole);
                             xr = xini - (f(xini) / Deri);
-                            if (Deri == 0 || f(xr).ToString()=="NaN")
-                            {
-                                s.Error = "Punto inicial mal elegido";
-                            }
-                            error = Math.Abs((xr - xant) / xr);
-                        }
+                            error = Math.Abs(xr - xant) / xr;
+
+                            cont++;
+                            xini = xr;
+                            xant = xr;
+
+
+                        } while ((Math.Abs(f(xr)) > tole) && (cont < iter));
                         // Si sale del while es porque una de las condiciones se cumplió, entonces encontró la raíz
 
                         s.sol = xr;
