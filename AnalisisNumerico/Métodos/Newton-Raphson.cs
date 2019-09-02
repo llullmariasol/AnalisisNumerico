@@ -12,9 +12,10 @@ namespace Métodos
         public static double f(double x)
         {
           //  return ((x * x) - (3 * x) + Math.Log(1 + x)) - (5 - Math.Pow(x, 0.5));
-            return (Math.Abs((x * x) - 4))+(2*x);
+          //  return (Math.Abs((x * x) - 4))+(2*x);
             //return (Math.Log(x)) + (1 / x) - 3;
             //return ((12.5 * (x + 2)) / (x * x + 4 * x + 5)) + 2;
+            return ((Math.Pow(x,5)-1)*Math.Pow(Math.E, x))-10;
         }
 
         public double xini { get; set; }
