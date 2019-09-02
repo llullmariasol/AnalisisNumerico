@@ -10,9 +10,9 @@ namespace Métodos
     {
         public static double f(double x)
         {
-           // return ((x*x)-(3*x)+Math.Log(1+x)) - (5-Math.Pow(x,0.5));
+            return ((x*x)-(3*x)+Math.Log(1+x)) - (5-Math.Pow(x,0.5));
             //return (Math.Abs((x * x) - 4)) + (2 * x);
-            return ((12.5 * (x + 2)) / ((x * x) + (4 * x) + 5)) + 2;
+            // return ((12.5 * (x + 2)) / (x * x + 4 * x + 5)) + 2;
         }
 
         public double x1 { get; set; }
@@ -78,7 +78,7 @@ namespace Métodos
                                 x1 = x2;
                                 x2 = xr;
                                 xant = xr;
-                                
+
                                 cont = cont + 1;
                                 xr = ((f(x2) * x1) - (f(x1) * x2)) / (f(x2) - f(x1));
                                 error = Math.Abs((xr - xant) / xr);
