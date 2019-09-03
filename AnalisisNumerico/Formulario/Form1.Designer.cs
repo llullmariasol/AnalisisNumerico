@@ -56,6 +56,7 @@
             this.button2.Text = "UNIDAD 2: SISTEMAS DE ECUACIONES";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.UseWaitCursor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 

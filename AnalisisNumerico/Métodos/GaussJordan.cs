@@ -1,0 +1,43 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Métodos
+{
+    public class GaussJordan
+    {
+        public int dim { get; set; } //dimension de la matriz
+
+        public decimal[] Calcular()
+        {
+            decimal[,] M = new decimal[dim, dim];
+            decimal[] V = new decimal[dim];
+            for (int i = 0; i <= dim-1; i++)
+            {
+                decimal coeficiente = M[i, i];
+                for (int j = 0; j <= dim ; j++)
+                {
+                    M[i, j] = M[i, j] / coeficiente;
+                }
+                for (int j = 0; j <= dim-1; j++)
+                {
+                    if (i!=j)
+                    {
+                        coeficiente = M[j, i];
+                        for (int k = 0; k <= dim; k++)
+                        {
+                            M[j, k] = M[j, k] - (coeficiente * M[i, k]);
+                        }
+                    }
+                }
+            }
+            for (int i = 0; i <=dim-1; i++)
+            {
+                V[i] = M[i, dim + 1];
+            }
+            return V;
+        }
+    }
+}

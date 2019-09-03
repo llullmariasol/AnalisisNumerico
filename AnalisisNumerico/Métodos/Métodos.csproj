@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bisección.cs" />
+    <Compile Include="GaussJordan.cs" />
+    <Compile Include="GaussSeidel.cs" />
     <Compile Include="Newton-Raphson.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReglaFalsa.cs" />
