@@ -13,6 +13,9 @@ namespace Formulario
 {
     public partial class SistEcuaciones : Form
     {
+        public int dime { get; set; }
+        public GaussJordan gaussJordan { get; set; }
+
         public SistEcuaciones()
         {
             InitializeComponent();
@@ -20,36 +23,120 @@ namespace Formulario
 
         private void SistEcuaciones_Load(object sender, EventArgs e)
         {
-
+            cantelem.MaxLength = 1; 
         }
 
         private void generar_Click(object sender, EventArgs e)
         {
-            int cantelementos = int.Parse(cantelem.Text);
-            int pointx = 120;
-            int pointy = 120;
+            int cantelementos = dime;
+            int pointx = 30;
+            int pointy = 30;
             panel1.Controls.Clear();
-            for (int j = 0; j < int.Parse(cantelem.Text); j++)
+            for (int j = 0; j < dime; j++)
             {
-                for (int i = 0; i < int.Parse(cantelem.Text); i++)
+                for (int i = 0; i < dime; i++)
                 {
                     TextBox txt = new TextBox();
                     txt.Location = new Point(pointx, pointy);
-                    txt.Height= 50; 
                     txt.Name = $"txt{i}{j}";
+                    txt.AutoSize = false;
+                    txt.Size = new Size(40,40);
                     panel1.Controls.Add(txt);
                     panel1.Show();
-                    pointy += 60;
+                    pointy +=50;
                 }
-                pointx += 120;
-                pointy = 120;
+                pointx += 50;
+                pointy = 30;
             }
-
+            
+            for (int i = 0; i < dime; i++)
+            {
+                TextBox txt = new TextBox();
+                txt.Location = new Point(pointx, pointy);
+                txt.Name = $"txtb{i}";
+                txt.AutoSize = false;
+                txt.Size = new Size(40, 40);
+                txt.BackColor = Color.LightBlue;
+                panel1.Controls.Add(txt);
+                panel1.Show();
+                pointy += 50;
+            }
+            gaussJordan = new GaussJordan();
+            gaussJordan.dim = int.Parse(cantelem.Text);
+            dime = gaussJordan.dim;
         }
 
         private void cantelem_TextChanged(object sender, EventArgs e)
         {
+            
+        }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public decimal[,] LlenarMatriz()
+        {
+            decimal[,] matriz = new decimal[dime, dime+1];
+
+            decimal[] v = new decimal[(dime * dime) + dime];
+            int i = 0;
+            foreach (TextBox txt in panel1.Controls.OfType<TextBox>())
+            {
+                v[i] = Convert.ToDecimal(txt.Text);
+                i++;
+            }
+
+            int xv = 0;
+            for (int ym = 0; ym < dime+1; ym++)
+            {
+                for (int xm = 0; xm < dime; xm++)
+                {
+                    matriz[xm, ym] = v[xv];
+                    xv++;
+                }
+            }
+            return matriz;
+        }
+
+        private void calcular_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.Text == "Gauss Jordan")
+            {
+                this.Text = "Método Gauss Jordan";
+                decimal[] vectorResult;
+                vectorResult = gaussJordan.Calcular(LlenarMatriz());
+                int pointx = 250;
+                int pointy = 35;
+                for (int i = 0; i < dime; i++)
+                {
+                    Label lbl = new Label();
+                    lbl.Location = new Point(pointx, pointy);
+                    lbl.Size = new Size(100, 40);
+                    switch (i)
+                    {
+                        case 0:
+                            lbl.Text = $"X = {vectorResult[i]}";
+                            break;
+                        case 1:
+                            lbl.Text = $"Y = {vectorResult[i]}";
+                            break;
+                        case 2:
+                            lbl.Text = $"Z = {vectorResult[i]}";
+                            break;
+                        case 3:
+                            lbl.Text = $"T = {vectorResult[i]}";
+                            break;
+                        case 4:
+                            lbl.Text = $"W = {vectorResult[i]}";
+                            break;
+                    }
+                    panel1.Controls.Add(lbl);
+                    panel1.Show();
+                    pointy += 50;
+                }
+            }
         }
     }
 }

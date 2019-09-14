@@ -8,16 +8,15 @@ namespace Métodos
 {
     public class GaussJordan
     {
-        public int dim { get; set; } //dimension de la matriz
+        public int dim { get; set; }
 
-        public decimal[] Calcular()
+        public decimal[] Calcular(decimal[,] M) //matriz llena como parámetro
         {
-            decimal[,] M = new decimal[dim, dim];
             decimal[] V = new decimal[dim];
             for (int i = 0; i <= dim-1; i++)
             {
                 decimal coeficiente = M[i, i];
-                for (int j = 0; j <= dim ; j++)
+                for (int j = 0; j <= dim; j++)
                 {
                     M[i, j] = M[i, j] / coeficiente;
                 }
@@ -35,7 +34,7 @@ namespace Métodos
             }
             for (int i = 0; i <=dim-1; i++)
             {
-                V[i] = M[i, dim + 1];
+                V[i] = M[i, dim];
             }
             return V;
         }
