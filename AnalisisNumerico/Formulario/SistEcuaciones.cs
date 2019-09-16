@@ -15,6 +15,7 @@ namespace Formulario
     {
         public int dime { get; set; }
         public GaussJordan gaussJordan { get; set; }
+        public GaussSeidel gaussSeidel { get; set; }
 
         public SistEcuaciones()
         {
@@ -61,9 +62,18 @@ namespace Formulario
                 panel1.Show();
                 pointy += 50;
             }
-            gaussJordan = new GaussJordan();
-            gaussJordan.dim = int.Parse(cantelem.Text);
-            dime = gaussJordan.dim;
+            if (comboBox1.Text == "Gauss Jordan")
+            {
+                gaussJordan = new GaussJordan();
+                gaussJordan.dim = int.Parse(cantelem.Text);
+                dime = gaussJordan.dim;
+            }
+            else
+            {
+                gaussSeidel = new GaussSeidel();
+                gaussSeidel.dim = int.Parse(cantelem.Text);
+                dime = gaussSeidel.dim;
+            }
         }
 
         private void cantelem_TextChanged(object sender, EventArgs e)
@@ -130,6 +140,42 @@ namespace Formulario
                             break;
                         case 4:
                             lbl.Text = $"W = {vectorResult[i]}";
+                            break;
+                    }
+                    panel1.Controls.Add(lbl);
+                    panel1.Show();
+                    pointy += 50;
+                }
+            }
+            else
+            {
+                this.Text = "Método Gauss Seidel";
+                decimal[] vectorResult2;
+                vectorResult2 = gaussSeidel.Calcular(LlenarMatriz(), Convert.ToDecimal(0.001), 100); // ver como ingresar la tolerancia y las iteraciones
+                
+                int pointx = 500;
+                int pointy = 35;
+                for (int i = 0; i < dime; i++)
+                {
+                    Label lbl = new Label();
+                    lbl.Location = new Point(pointx, pointy);
+                    lbl.Size = new Size(100, 40);
+                    switch (i)
+                    {
+                        case 0:
+                            lbl.Text = $"X = {Decimal.Round(vectorResult2[i])}";
+                            break;
+                        case 1:
+                            lbl.Text = $"Y = {Decimal.Round(vectorResult2[i])}";
+                            break;
+                        case 2:
+                            lbl.Text = $"Z = {Decimal.Round(vectorResult2[i])}";
+                            break;
+                        case 3:
+                            lbl.Text = $"T = {Decimal.Round(vectorResult2[i])}";
+                            break;
+                        case 4:
+                            lbl.Text = $"W = {Decimal.Round(vectorResult2[i])}";
                             break;
                     }
                     panel1.Controls.Add(lbl);
