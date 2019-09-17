@@ -42,6 +42,7 @@ namespace Formulario
                     txt.Name = $"txt{i}{j}";
                     txt.AutoSize = false;
                     txt.Size = new Size(40,40);
+                    txt.Font = new Font("Microsoft Sans Serif", 10);
                     panel1.Controls.Add(txt);
                     panel1.Show();
                     pointy +=50;
@@ -57,6 +58,7 @@ namespace Formulario
                 txt.Name = $"txtb{i}";
                 txt.AutoSize = false;
                 txt.Size = new Size(40, 40);
+                txt.Font = new Font("Microsoft Sans Serif", 10);
                 txt.BackColor = Color.LightBlue;
                 panel1.Controls.Add(txt);
                 panel1.Show();
@@ -124,7 +126,7 @@ namespace Formulario
                 vectorResult = gaussSeidel.Calcular(LlenarMatriz());
                 label4.Text = Convert.ToString(gaussSeidel.iteru);
             }
-                int pointx = 500;
+                int pointx = 400;
                 int pointy = 35;
                 for (int i = 0; i < dime; i++)
                 {
@@ -153,6 +155,16 @@ namespace Formulario
                     panel1.Show();
                     pointy += 50;
                 }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
