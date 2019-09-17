@@ -9,11 +9,20 @@ namespace Métodos
     public class GaussSeidel
     {
         public int dim { get; set; }
+        public double tole { get; set; }
+        public int iter { get; set; }
+        public int iteru { get; set; }
 
-        public decimal[] Calcular(decimal[,] M, decimal tolerancia, int iter) //matriz llena, tolerancia e iteraciones como parámetro
+        public GaussSeidel()
+        {
+            tole = 0.001;
+            iter = 100;
+        }
+
+        public decimal[] Calcular(decimal[,] M) //matriz llena, tolerancia e iteraciones como parámetro
         {
             decimal[] V = new decimal[dim];
-            decimal x = tolerancia + 1;
+            decimal x;
             int contador = 0;
             decimal resultado;
             decimal[] VANT = new decimal[dim];
@@ -40,10 +49,11 @@ namespace Métodos
                 for (int i = 0; i < dim; i++)
                 {
                     R[i] = Math.Abs(V[i] - VANT[i]);
-                    if (R[i] > tolerancia)
+                    if (R[i] > Convert.ToDecimal(tole))
                         flag = true;
                 }
             }
+            iteru = contador;
             return V;
         }
     }

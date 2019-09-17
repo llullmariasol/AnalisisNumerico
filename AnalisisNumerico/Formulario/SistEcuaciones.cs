@@ -112,47 +112,18 @@ namespace Formulario
 
         private void calcular_Click(object sender, EventArgs e)
         {
+            decimal[] vectorResult;
             if (comboBox1.Text == "Gauss Jordan")
             {
                 this.Text = "Método Gauss Jordan";
-                decimal[] vectorResult;
                 vectorResult = gaussJordan.Calcular(LlenarMatriz());
-                int pointx = 250;
-                int pointy = 35;
-                for (int i = 0; i < dime; i++)
-                {
-                    Label lbl = new Label();
-                    lbl.Location = new Point(pointx, pointy);
-                    lbl.Size = new Size(100, 40);
-                    switch (i)
-                    {
-                        case 0:
-                            lbl.Text = $"X = {vectorResult[i]}";
-                            break;
-                        case 1:
-                            lbl.Text = $"Y = {vectorResult[i]}";
-                            break;
-                        case 2:
-                            lbl.Text = $"Z = {vectorResult[i]}";
-                            break;
-                        case 3:
-                            lbl.Text = $"T = {vectorResult[i]}";
-                            break;
-                        case 4:
-                            lbl.Text = $"W = {vectorResult[i]}";
-                            break;
-                    }
-                    panel1.Controls.Add(lbl);
-                    panel1.Show();
-                    pointy += 50;
-                }
             }
             else
             {
                 this.Text = "Método Gauss Seidel";
-                decimal[] vectorResult2;
-                vectorResult2 = gaussSeidel.Calcular(LlenarMatriz(), Convert.ToDecimal(0.001), 100); // ver como ingresar la tolerancia y las iteraciones
-                
+                vectorResult = gaussSeidel.Calcular(LlenarMatriz());
+                label4.Text = Convert.ToString(gaussSeidel.iteru);
+            }
                 int pointx = 500;
                 int pointy = 35;
                 for (int i = 0; i < dime; i++)
@@ -163,26 +134,25 @@ namespace Formulario
                     switch (i)
                     {
                         case 0:
-                            lbl.Text = $"X = {Decimal.Round(vectorResult2[i])}";
+                            lbl.Text = $"X = {Decimal.Round(vectorResult[i])}";
                             break;
                         case 1:
-                            lbl.Text = $"Y = {Decimal.Round(vectorResult2[i])}";
+                            lbl.Text = $"Y = {Decimal.Round(vectorResult[i])}";
                             break;
                         case 2:
-                            lbl.Text = $"Z = {Decimal.Round(vectorResult2[i])}";
+                            lbl.Text = $"Z = {Decimal.Round(vectorResult[i])}";
                             break;
                         case 3:
-                            lbl.Text = $"T = {Decimal.Round(vectorResult2[i])}";
+                            lbl.Text = $"T = {Decimal.Round(vectorResult[i])}";
                             break;
                         case 4:
-                            lbl.Text = $"W = {Decimal.Round(vectorResult2[i])}";
+                            lbl.Text = $"W = {Decimal.Round(vectorResult[i])}";
                             break;
                     }
                     panel1.Controls.Add(lbl);
                     panel1.Show();
                     pointy += 50;
                 }
-            }
         }
     }
 }
