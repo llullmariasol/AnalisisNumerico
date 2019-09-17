@@ -132,23 +132,23 @@ namespace Formulario
                 {
                     Label lbl = new Label();
                     lbl.Location = new Point(pointx, pointy);
-                    lbl.Size = new Size(100, 40);
+                    lbl.Size = new Size(150,50);
                     switch (i)
                     {
                         case 0:
-                            lbl.Text = $"X = {Decimal.Round(vectorResult[i])}";
+                            lbl.Text = $"X = {Decimal.Round(vectorResult[i], 6)}";
                             break;
                         case 1:
-                            lbl.Text = $"Y = {Decimal.Round(vectorResult[i])}";
+                            lbl.Text = $"Y = {Decimal.Round(vectorResult[i], 6)}";
                             break;
                         case 2:
-                            lbl.Text = $"Z = {Decimal.Round(vectorResult[i])}";
+                            lbl.Text = $"Z = {Decimal.Round(vectorResult[i], 6)}";
                             break;
                         case 3:
-                            lbl.Text = $"T = {Decimal.Round(vectorResult[i])}";
+                            lbl.Text = $"T = {Decimal.Round(vectorResult[i], 6)}";
                             break;
                         case 4:
-                            lbl.Text = $"W = {Decimal.Round(vectorResult[i])}";
+                            lbl.Text = $"W = {Decimal.Round(vectorResult[i], 6)}";
                             break;
                     }
                     panel1.Controls.Add(lbl);
