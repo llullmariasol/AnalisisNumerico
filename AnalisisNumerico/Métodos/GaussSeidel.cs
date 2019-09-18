@@ -17,24 +17,24 @@ namespace Métodos
 
         public GaussSeidel()
         {
-            tole = 0.001;
+            tole = 0.0001;
             iter = 100;
         }
 
-        public decimal[] Calcular(decimal[,] M) //matriz llena, tolerancia e iteraciones como parámetro
+        public double[] Calcular(double[,] M) //matriz llena, tolerancia e iteraciones como parámetro
         {
-            decimal[] V = new decimal[dim];
-            decimal x;
+            double[] V = new double[dim];
+            double x;
             int contador = 0;
-            decimal resultado;
-            decimal[] VANT = new decimal[dim];
-            decimal[] R = new decimal[dim];
+            double resultado;
+            double[] VANT = new double[dim];
+            double[] R = new double[dim];
             bool flag = true;
             DD = true;
             for (int i = 0; i < dim; i++)  // recorro las filas de la matriz
             {
-                decimal diagonal = M[i, i];
-                decimal sumatoria = 0;
+                double diagonal = M[i, i];
+                double sumatoria = 0;
                 for (int j = 0; j < dim; j++)  // recorro las columnas
                 {
                     if (i != j)
@@ -56,30 +56,30 @@ namespace Métodos
                         DDParcial = true;
                 }
             }
-            while (flag == true & iter > contador)
+            while (flag == true & iter >= contador)
             {
                 contador++;
                 if (contador > 1)
-                    VANT = V;
+                   V.CopyTo(VANT, 0);
                 for (int i = 0; i < dim; i++)
                 {
                     resultado = M[i, dim];
-                    x = M[i, i];
+                    x = Convert.ToDouble(M[i, i]);
                     for (int j = 0; j < dim; j++)
                     {
                         if (i != j)
                             resultado = resultado - (M[i, j] * V[j]);
                     }
-                    x = resultado / x;
+                    x = Convert.ToDouble(resultado) / x;
                     V[i] = x;
                 }
                 flag = false;
                 for (int i = 0; i < dim; i++)
                 {
                     R[i] = Math.Abs(V[i] - VANT[i]);
-                    if (R[i] > Convert.ToDecimal(tole))
+                    if (R[i] > tole)
                         flag = true;
-                }
+                }       
             }
             iteru = contador;
             return V;

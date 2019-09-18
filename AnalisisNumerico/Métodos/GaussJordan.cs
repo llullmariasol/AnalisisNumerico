@@ -10,12 +10,12 @@ namespace Métodos
     {
         public int dim { get; set; }
 
-        public decimal[] Calcular(decimal[,] M) //matriz llena como parámetro
+        public double[] Calcular(double[,] M) //matriz llena como parámetro
         {
-            decimal[] V = new decimal[dim];
+            double[] V = new double[dim];
             for (int i = 0; i <= dim-1; i++)
             {
-                decimal coeficiente = M[i, i];
+                double coeficiente = M[i, i];
                 for (int j = 0; j <= dim; j++)
                 {
                     M[i, j] = M[i, j] / coeficiente;

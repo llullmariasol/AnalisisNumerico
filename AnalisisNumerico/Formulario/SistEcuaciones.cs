@@ -88,15 +88,15 @@ namespace Formulario
 
         }
 
-        public decimal[,] LlenarMatriz()
+        public double[,] LlenarMatriz()
         {
-            decimal[,] matriz = new decimal[dime, dime+1];
+            double[,] matriz = new double[dime, dime+1];
 
-            decimal[] v = new decimal[(dime * dime) + dime];
+            double[] v = new double[(dime * dime) + dime];
             int i = 0;
             foreach (TextBox txt in panel1.Controls.OfType<TextBox>())
             {
-                v[i] = Convert.ToDecimal(txt.Text);
+                v[i] = Convert.ToDouble(txt.Text);
                 i++;
             }
 
@@ -114,7 +114,7 @@ namespace Formulario
 
         private void calcular_Click(object sender, EventArgs e)
         {
-            decimal[] vectorResult;
+            double[] vectorResult;
             if (comboBox1.Text == "Gauss Jordan")
             {
                 this.Text = "Método Gauss Jordan";
@@ -124,8 +124,14 @@ namespace Formulario
             {
                 this.Text = "Método Gauss Seidel";
                 vectorResult = gaussSeidel.Calcular(LlenarMatriz());
-                label3.Text = "Iteraciones utilizadas";
-                label4.Text = Convert.ToString(gaussSeidel.iteru);
+                if (gaussSeidel.iteru > 100)
+
+                    label4.Text = "Se superó la cantidad máxima de iteraciones";
+                else
+                {
+                    label3.Text = "Iteraciones utilizadas";
+                    label4.Text = Convert.ToString(gaussSeidel.iteru);
+                }                          
                 if (gaussSeidel.DD == true)
                     label5.Text = "El sistema es Diagonalmente Dominante";
                 else
@@ -146,19 +152,19 @@ namespace Formulario
                     switch (i)
                     {
                         case 0:
-                            lbl.Text = $"X = {Decimal.Round(vectorResult[i], 6)}";
+                            lbl.Text = $"X = {vectorResult[i]}";
                             break;
                         case 1:
-                            lbl.Text = $"Y = {Decimal.Round(vectorResult[i], 6)}";
+                            lbl.Text = $"Y = {vectorResult[i]}";
                             break;
                         case 2:
-                            lbl.Text = $"Z = {Decimal.Round(vectorResult[i], 6)}";
+                            lbl.Text = $"Z = {vectorResult[i]}";
                             break;
                         case 3:
-                            lbl.Text = $"T = {Decimal.Round(vectorResult[i], 6)}";
+                            lbl.Text = $"T = {vectorResult[i]}";
                             break;
                         case 4:
-                            lbl.Text = $"W = {Decimal.Round(vectorResult[i], 6)}";
+                            lbl.Text = $"W = {vectorResult[i]}";
                             break;
                     }
                     panel1.Controls.Add(lbl);
