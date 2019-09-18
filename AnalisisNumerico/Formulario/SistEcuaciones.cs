@@ -124,7 +124,17 @@ namespace Formulario
             {
                 this.Text = "Método Gauss Seidel";
                 vectorResult = gaussSeidel.Calcular(LlenarMatriz());
+                label3.Text = "Iteraciones utilizadas";
                 label4.Text = Convert.ToString(gaussSeidel.iteru);
+                if (gaussSeidel.DD == true)
+                    label5.Text = "El sistema es Diagonalmente Dominante";
+                else
+                {
+                    if (gaussSeidel.DDParcial == true)
+                        label5.Text = "El sistema no es DD pero con diferencia menor a 1";
+                    else
+                        label5.Text = "El sistema no es Diagonalmente Dominante";
+                }
             }
                 int pointx = 400;
                 int pointy = 35;
