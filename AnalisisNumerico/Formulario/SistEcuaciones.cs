@@ -152,20 +152,20 @@ namespace Formulario
                     switch (i)
                     {
                         case 0:
-                            lbl.Text = $"X = {vectorResult[i]}";
+                            lbl.Text = $"X = {Math.Round(vectorResult[i],6)}";
                             break;
                         case 1:
-                            lbl.Text = $"Y = {vectorResult[i]}";
-                            break;
+                            lbl.Text = $"Y = {Math.Round(vectorResult[i],6)}";
+                        break;
                         case 2:
-                            lbl.Text = $"Z = {vectorResult[i]}";
-                            break;
+                            lbl.Text = $"Z = {Math.Round(vectorResult[i],6)}";
+                        break;
                         case 3:
-                            lbl.Text = $"T = {vectorResult[i]}";
-                            break;
+                            lbl.Text = $"T = {Math.Round(vectorResult[i],6)}";
+                        break;
                         case 4:
-                            lbl.Text = $"W = {vectorResult[i]}";
-                            break;
+                            lbl.Text = $"W = {Math.Round(vectorResult[i],6)}";
+                        break;
                     }
                     panel1.Controls.Add(lbl);
                     panel1.Show();
