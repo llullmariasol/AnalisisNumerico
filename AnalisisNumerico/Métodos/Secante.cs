@@ -10,7 +10,9 @@ namespace Métodos
     {
         public static double f(double x)
         {
-            return ((x*x)-(3*x)+Math.Log(1+x)) - (5-Math.Pow(x,0.5));
+            return (((10 * x) + 20) / ((x * x) + (4 * x) + 5)) + 2;
+            // return (Math.Log(x)) + (1 / x) - 3;
+            // return ((x*x)-(3*x)+Math.Log(1+x)) - (5-Math.Pow(x,0.5));
             //return (Math.Abs((x * x) - 4)) + (2 * x);
             // return ((12.5 * (x + 2)) / (x * x + 4 * x + 5)) + 2;
         }
