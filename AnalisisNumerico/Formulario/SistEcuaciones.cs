@@ -118,7 +118,7 @@ namespace Formulario
             if (comboBox1.Text == "Gauss Jordan")
             {
                 this.Text = "Método Gauss Jordan";
-                vectorResult = gaussJordan.Calcular(LlenarMatriz());
+                vectorResult = gaussJordan.Calcular(LlenarMatriz(), gaussJordan.dim);
             }
             else
             {

@@ -10,7 +10,7 @@ namespace Métodos
     {
         public int dim { get; set; }
 
-        public double[] Calcular(double[,] M) //matriz llena como parámetro
+        public double[] Calcular(double[,] M, int dim)
         {
             double[] V = new double[dim];
             for (int i = 0; i <= dim-1; i++)
@@ -32,7 +32,7 @@ namespace Métodos
                     }
                 }
             }
-            for (int i = 0; i <=dim-1; i++)
+            for (int i = 0; i <= dim-1; i++)
             {
                 V[i] = M[i, dim];
             }
