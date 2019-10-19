@@ -1,6 +1,6 @@
 ﻿namespace Formulario
 {
-    partial class RegresiónMinCuadrados
+    partial class Regresión
     {
         /// <summary>
         /// Required designer variable.
@@ -101,7 +101,7 @@
             this.Controls.Add(this.textBox1);
             this.Name = "RegresiónMinCuadrados";
             this.Text = "RegresiónMinCuadrados";
-            this.Load += new System.EventHandler(this.RegresiónMinCuadrados_Load);
+            this.Load += new System.EventHandler(this.Regresión_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

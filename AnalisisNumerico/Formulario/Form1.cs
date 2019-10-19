@@ -35,8 +35,14 @@ namespace Formulario
         {
             SistEcuaciones sistEcuaciones = new SistEcuaciones();
             sistEcuaciones.Owner = this;
-            sistEcuaciones.Show();
-         
+            sistEcuaciones.Show();        
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Regresión regresión = new Regresión();
+            regresión.Owner = this;
+            regresión.Show();
         }
     }
 }

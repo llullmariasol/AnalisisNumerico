@@ -71,11 +71,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegresiónMinCuadrados.cs">
+    <Compile Include="Regresión.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegresiónMinCuadrados.Designer.cs">
-      <DependentUpon>RegresiónMinCuadrados.cs</DependentUpon>
+    <Compile Include="Regresión.Designer.cs">
+      <DependentUpon>Regresión.cs</DependentUpon>
     </Compile>
     <Compile Include="SistEcuaciones.cs">
       <SubType>Form</SubType>
@@ -110,8 +110,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="RegresiónMinCuadrados.resx">
-      <DependentUpon>RegresiónMinCuadrados.cs</DependentUpon>
+    <EmbeddedResource Include="Regresión.resx">
+      <DependentUpon>Regresión.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SistEcuaciones.resx">
       <DependentUpon>SistEcuaciones.cs</DependentUpon>

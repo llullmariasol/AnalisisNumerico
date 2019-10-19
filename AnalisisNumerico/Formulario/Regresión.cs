@@ -11,14 +11,14 @@ using Métodos;
 
 namespace Formulario
 {
-    public partial class RegresiónMinCuadrados : Form
+    public partial class Regresión : Form
     {
-        public RegresiónMinCuadrados regresiónMinCuadrados { get; set; }
+        public Métodos.RegresiónLineal regresiónLineal { get; set; }
 
-        public RegresiónMinCuadrados()
+        public Regresión()
         {
             InitializeComponent();
-            matriz = new double[cont, 3];
+            matriz = new double[10, 4];
             cont = 0;
         }
 
@@ -27,14 +27,14 @@ namespace Formulario
 
         public void LlenarMatriz(double x, double y)
         {
-            cont++;
             matriz[cont, 0] = x;
             matriz[cont, 1] = y;
             matriz[cont, 2] = x*y;
             matriz[cont, 3] = x*x;
+            cont++;
         }
 
-        private void RegresiónMinCuadrados_Load(object sender, EventArgs e)
+        private void Regresión_Load(object sender, EventArgs e)
         {
 
         }
@@ -42,17 +42,22 @@ namespace Formulario
         private void button1_Click(object sender, EventArgs e)
         {
             LlenarMatriz(Convert.ToDouble(textBox1.Text), Convert.ToDouble(textBox2.Text));
+            textBox1.Clear();
+            textBox2.Clear();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            regresiónMinCuadrados = new RegresiónMinCuadrados();
-            string solucion = regresiónMinCuadrados.Calcular(matriz);
-        }
+            // Calcular sumatorias
+            for (int i = 0; i < cont-1; i++)
+            {
+                regresiónLineal.SumX += matriz[i,0];
+                regresiónLineal.SumY += matriz[i, 1];
+                regresiónLineal.SumXY += matriz[i, 2];
+                regresiónLineal.SumX2 += matriz[i, 3];
+            }
 
-        private string Calcular(double[,] matriz)
-        {
-            throw new NotImplementedException();
+            regresiónLineal.Calcular(matriz);
         }
     }
 }
