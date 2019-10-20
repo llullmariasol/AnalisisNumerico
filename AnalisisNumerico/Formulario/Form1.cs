@@ -40,9 +40,9 @@ namespace Formulario
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Regresión regresión = new Regresión();
-            regresión.Owner = this;
-            regresión.Show();
+            LinealPolinomial regresion = new LinealPolinomial();
+            regresion.Owner = this;
+            regresion.Show();
         }
     }
 }

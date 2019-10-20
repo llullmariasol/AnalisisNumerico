@@ -63,6 +63,12 @@
     <Compile Include="Datos.Designer.cs">
       <DependentUpon>Datos.cs</DependentUpon>
     </Compile>
+    <Compile Include="LinealPolinomial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LinealPolinomial.Designer.cs">
+      <DependentUpon>LinealPolinomial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Newton.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Datos.resx">
       <DependentUpon>Datos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LinealPolinomial.resx">
+      <DependentUpon>LinealPolinomial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Newton.resx">
       <DependentUpon>Newton.cs</DependentUpon>

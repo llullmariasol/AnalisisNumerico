@@ -17,9 +17,11 @@ namespace Formulario
 
         public Regresión()
         {
+            regresiónLineal = new RegresiónLineal();
             InitializeComponent();
             matriz = new double[10, 4];
             cont = 0;
+            
         }
 
         public double[,] matriz { get; set; }
@@ -36,7 +38,11 @@ namespace Formulario
 
         private void Regresión_Load(object sender, EventArgs e)
         {
-
+            if (Text == "Regresión Lineal")
+            {
+                label5.Visible = false;
+                textBox4.Visible = false;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -49,15 +55,25 @@ namespace Formulario
         private void button2_Click(object sender, EventArgs e)
         {
             // Calcular sumatorias
-            for (int i = 0; i < cont-1; i++)
+            if (Text == "Regresión Lineal")
             {
-                regresiónLineal.SumX += matriz[i,0];
-                regresiónLineal.SumY += matriz[i, 1];
-                regresiónLineal.SumXY += matriz[i, 2];
-                regresiónLineal.SumX2 += matriz[i, 3];
+                regresiónLineal.n = cont;
+                for (int i = 0; i < cont - 1; i++)
+                {
+                    regresiónLineal.SumX += matriz[i, 0];
+                    regresiónLineal.SumY += matriz[i, 1];
+                    regresiónLineal.SumXY += matriz[i, 2];
+                    regresiónLineal.SumX2 += matriz[i, 3];
+                }
+                A1A0 resultado = new A1A0();
+                resultado = regresiónLineal.Calcular(matriz, Convert.ToDouble(textBox3.Text));
+                string a1red = resultado.a1.ToString("0.##");
+                string a0red = resultado.a0.ToString("0.##");
+                label7.Text = $"y = {a1red}x + {a0red}";
+                string rred = resultado.r.ToString("0.##");
+                label9.Text = $"r = {rred}";
+                label27.Text = resultado.Eficacia;
             }
-
-            regresiónLineal.Calcular(matriz);
         }
     }
 }

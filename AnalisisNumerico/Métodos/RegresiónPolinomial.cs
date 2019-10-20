@@ -15,6 +15,7 @@ namespace Métodos
         public double SumY { get; set; }
         public double[] VectorX { get; set; }
         public double[] VectorY { get; set; }
+
         public double[] Calcular()
         {
             double[] Resultado;

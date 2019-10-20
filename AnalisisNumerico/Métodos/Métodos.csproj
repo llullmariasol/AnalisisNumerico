@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="A1A0.cs" />
     <Compile Include="Bisección.cs" />
     <Compile Include="GaussJordan.cs" />
     <Compile Include="GaussSeidel.cs" />

@@ -17,14 +17,37 @@ namespace Métodos
         public double SumXY { get; set; }
         public double SumX2 { get; set; }
         public int n { get; set; } //cantidad de puntos ingresados
+        public double r { get; set; } // Coueficiente de correlación
 
-        public string Calcular(double[,] Matriz)
+        public RegresiónLineal()
         {
-            a1 = (n*SumXY - SumX*SumY) / (n*SumX2 - Math.Pow(SumX,2));
-            a0 = (SumY / n) - (a1 * (SumX / n));
-            //FOR para averiguar St Y Sr
-
-            return "hola"; //mostrar funcion y coeficiente de correlacion
+            SumX = 0;
+            SumY = 0;
+            SumXY = 0;
+            SumX2 = 0;
         }
+
+        public A1A0 Calcular(double[,] Matriz, double tolerancia)
+        {
+            A1A0 resultado = new A1A0();
+            resultado.a1 = (n*SumXY - SumX*SumY) / (n*SumX2 - Math.Pow(SumX,2));
+            resultado.a0 = (SumY / n) - (a1 * (SumX / n));
+            
+            for (int i = 0; i < n-1; i++)
+            {
+                Sr += Math.Pow(Matriz[i, 1] - (a1 * Matriz[i, 0] + a0),2);
+                St += Math.Pow(Matriz[i, 1] - (SumY / n), 2);
+            }
+
+            resultado.r = Math.Sqrt((St - Sr) / St) * 100;
+
+            if (resultado.r < tolerancia)
+                resultado.Eficacia = "No es aceptable el ajuste";
+            else
+                resultado.Eficacia = "Consideramos que el ajuste es aceptable";
+
+            return resultado; //contiene a1, a0, coeficiente de correlacion y comentario.
+        }
+        
     }
 }
