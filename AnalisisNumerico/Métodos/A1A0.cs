@@ -11,6 +11,6 @@ namespace Métodos
         public double a1 { get; set; }
         public double a0 { get; set; }
         public string Eficacia { get; set; }
-        public double  r { get; set; }
+        public double r { get; set; }
     }
 }

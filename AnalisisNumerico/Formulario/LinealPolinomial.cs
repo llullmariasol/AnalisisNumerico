@@ -30,7 +30,13 @@ namespace Formulario
         {
             Regresión regresión = new Regresión();
             regresión.Owner = this;
+            regresión.Text = "Regresión Polinomial";
             regresión.Show();
+        }
+
+        private void LinealPolinomial_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
