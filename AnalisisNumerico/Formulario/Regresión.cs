@@ -15,10 +15,15 @@ namespace Formulario
     {
         public RegresiónLineal regresiónLineal { get; set; }
         public RegresiónPolinomial regresiónPolinomial { get; set; }
+        public int grado { get; set; }
+        public double[] VectorX { get; set; }
+        public double[] VectorY { get; set; }
 
         public Regresión()
         {
-            InitializeComponent();   
+            InitializeComponent();
+            VectorY = new double[10];
+            VectorX = new double[10];
         }
 
         public double[,] matriz { get; set; }
@@ -58,7 +63,9 @@ namespace Formulario
             else
             {
                 regresiónPolinomial.VectorX[cont] = Convert.ToDouble(textBox1.Text);
+                VectorX[cont] = regresiónPolinomial.VectorX[cont];
                 regresiónPolinomial.VectorY[cont] = Convert.ToDouble(textBox2.Text);
+                VectorY[cont] = regresiónPolinomial.VectorY[cont];
                 cont++;
             }
             textBox1.Clear();
@@ -90,6 +97,7 @@ namespace Formulario
             {
                 regresiónPolinomial.n = cont;
                 regresiónPolinomial.Grado = int.Parse(textBox4.Text);
+                grado = regresiónPolinomial.Grado;
                 double[] solución = new double[regresiónPolinomial.Grado + 1];
                 solución = regresiónPolinomial.Calcular();
                 label7.Text = "y = ";
@@ -124,6 +132,13 @@ namespace Formulario
         private void label6_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Lagrange lagrange = new Lagrange(VectorX, VectorY, grado, cont);
+            lagrange.Owner = this;
+            lagrange.Show();
         }
     }
 }

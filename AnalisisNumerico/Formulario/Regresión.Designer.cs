@@ -62,6 +62,7 @@
             this.label26 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
@@ -382,11 +383,24 @@
             this.label27.Size = new System.Drawing.Size(0, 16);
             this.label27.TabIndex = 35;
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.button3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(381, 209);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(177, 38);
+            this.button3.TabIndex = 36;
+            this.button3.Text = "Calcular Lagrange";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Regresión
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(636, 264);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.label27);
             this.Controls.Add(this.label29);
             this.Controls.Add(this.label26);
@@ -465,5 +479,6 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Button button3;
     }
 }
