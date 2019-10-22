@@ -104,13 +104,20 @@ namespace Formulario
                             label7.Text += $"{solución[i].ToString("0.##")}x + ";
                 }
 
-                double r = Math.Sqrt((regresiónPolinomial.St - regresiónPolinomial.Sr) / regresiónPolinomial.St) * 100;
-                label9.Text = $"r = {r.ToString("0.##")}";
+                double r;
+                if (regresiónPolinomial.St != 0)
+                {
+                    r = Math.Sqrt((regresiónPolinomial.St - regresiónPolinomial.Sr) / regresiónPolinomial.St) * 100;
+                    label9.Text = $"r = {r.ToString("0.##")}";
 
-                if (r < 80)
-                    label27.Text = "No es aceptable el ajuste";
+                    if (r < Convert.ToInt32(textBox3.Text))
+                        label27.Text = "No es aceptable el ajuste";
+                    else
+                        label27.Text = "El ajuste es aceptable";
+                }
                 else
-                    label27.Text = "El ajuste es aceptable";
+                    label9.Text = "Error, división por 0";
+                          
             }
         }
 

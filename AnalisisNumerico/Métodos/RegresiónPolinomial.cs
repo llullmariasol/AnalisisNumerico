@@ -37,22 +37,19 @@ namespace Métodos
                 }
             }
             Resultado = gaussJordan.Calcular(Matriz, Grado+1);
-            double Base;
 
-            for (int i = 0; i < n-1; i++)
+            double S;
+            for (int i = 0; i < n; i++)
             {
                 St = St + Math.Pow((SumY / n) - VectorY[i], 2);
-                Base = VectorY[i];
-                for (int j = 0; j < Grado; j++)
+                S = 0;
+                for (int j = 0; j < Grado + 1; j++)
                 {
-                    if (j == 0)
-                        Base = Base - Resultado[j];
-                    else
-                        Base = Base - (Resultado[j]*Math.Pow(VectorX[i], i));
+                    S = S + (Resultado[j] * Math.Pow(VectorX[i], j));
                 }
-                Sr = Sr + Math.Pow(Base, 2);
+                Sr = Sr + Math.Pow(S - VectorY[i], 2);
             }
-
+            
             return Resultado;
         }
     }
