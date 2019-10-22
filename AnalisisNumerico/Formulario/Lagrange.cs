@@ -35,7 +35,7 @@ namespace Formulario
         private void button1_Click(object sender, EventArgs e)
         {
             MLagrange lagrange = new MLagrange();
-            lagrange.Grado = Grado;
+            lagrange.Grado = Cont;
             for (int i = 0; i < Cont; i++)
             {
                 lagrange.x[i] = Vectorx[i];
