@@ -20,7 +20,7 @@ namespace Formulario
 
         private void TiposIntegración_Load(object sender, EventArgs e)
         {
-            if (Text == "Trapezoidal Simple" || Text == "Simpson 1/3 Simple" || Text == "Simpson 3/8")
+            if (Text == "Trapezoidal Simple" || Text == "Simpson 1/3 Simple")
             {
                 Controls.Remove(textBox3);
                 Controls.Remove(label5);
@@ -29,21 +29,31 @@ namespace Formulario
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (Text == "Trapezoidal Simple")
+            if (this.Text == "Trapezoidal Simple")
             {
                 TrapezoidalSimple trapezoidalSimple = new TrapezoidalSimple();
                 label2.Text = trapezoidalSimple.Calcular(Convert.ToDouble(textBox1.Text), Convert.ToDouble(textBox2.Text)).ToString();
             }
 
-            if (Text == "Simpson 1/3 Simple")
+            if (this.Text == "Trapezoidal Múltiple")
+            {
+                TrapezoidalMúltiple trapezoidalMultiple = new TrapezoidalMúltiple();
+                trapezoidalMultiple.n = Convert.ToInt16(textBox3.Text);
+                label2.Text = trapezoidalMultiple.Calcular(Convert.ToInt16(textBox1.Text), Convert.ToInt16(textBox2.Text)).ToString();
+            }
+
+            /////////////////
+            if (this.Text == "Simpson 1/3 Simple")
             {
                 SimpsonSimple simpsonSimple = new SimpsonSimple();
                 label2.Text = simpsonSimple.Calcular(Convert.ToDouble(textBox1.Text), Convert.ToDouble(textBox2.Text)).ToString();
             }
-            if (Text == "Simpson 3/8")
+
+            if (this.Text == "Simpson 1/3 Múltiple")
             {
-                SimpsonTresOct simpsonTresOct = new SimpsonTresOct();
-                label2.Text = simpsonTresOct.Calcular(Convert.ToDouble(textBox1.Text), Convert.ToDouble(textBox2.Text)).ToString();
+                SimpsonMúltiple simpsonMultiple = new SimpsonMúltiple();
+                simpsonMultiple.n = Convert.ToInt16(textBox3.Text);
+                label2.Text = simpsonMultiple.Calcular(Convert.ToDouble(textBox1.Text), Convert.ToDouble(textBox2.Text)).ToString();
             }
         }
     }
