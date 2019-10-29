@@ -35,11 +35,25 @@ namespace Formulario
                 label2.Text = trapezoidalSimple.Calcular(Convert.ToDouble(textBox1.Text), Convert.ToDouble(textBox2.Text)).ToString();
             }
 
+            if (this.Text == "Trapezoidal Múltiple")
+            {
+                TrapezoidalMúltiple trapezoidalMultiple = new TrapezoidalMúltiple();
+                trapezoidalMultiple.n = Convert.ToInt16(textBox3.Text);
+                label2.Text = trapezoidalMultiple.Calcular(Convert.ToInt16(textBox1.Text), Convert.ToInt16(textBox2.Text)).ToString();
+            }
+
             /////////////////
             if (this.Text == "Simpson 1/3 Simple")
             {
                 SimpsonSimple simpsonSimple = new SimpsonSimple();
                 label2.Text = simpsonSimple.Calcular(Convert.ToDouble(textBox1.Text), Convert.ToDouble(textBox2.Text)).ToString();
+            }
+
+            if (this.Text == "Simpson 1/3 Múltiple")
+            {
+                SimpsonMúltiple simpsonMultiple = new SimpsonMúltiple();
+                simpsonMultiple.n = Convert.ToInt16(textBox3.Text);
+                label2.Text = simpsonMultiple.Calcular(Convert.ToDouble(textBox1.Text), Convert.ToDouble(textBox2.Text)).ToString();
             }
         }
     }
