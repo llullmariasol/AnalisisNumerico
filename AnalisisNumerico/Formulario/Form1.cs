@@ -44,5 +44,12 @@ namespace Formulario
             regresion.Owner = this;
             regresion.Show();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Integración integración = new Integración();
+            integración.Owner = this;
+            integración.Show();
+        }
     }
 }

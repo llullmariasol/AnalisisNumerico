@@ -63,6 +63,12 @@
     <Compile Include="Datos.Designer.cs">
       <DependentUpon>Datos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Integración.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Integración.Designer.cs">
+      <DependentUpon>Integración.cs</DependentUpon>
+    </Compile>
     <Compile Include="Lagrange.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,12 @@
     <Compile Include="SistEcuaciones.Designer.cs">
       <DependentUpon>SistEcuaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="TiposIntegración.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TiposIntegración.Designer.cs">
+      <DependentUpon>TiposIntegración.cs</DependentUpon>
+    </Compile>
     <Compile Include="Unidad1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Datos.resx">
       <DependentUpon>Datos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Integración.resx">
+      <DependentUpon>Integración.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Lagrange.resx">
       <DependentUpon>Lagrange.cs</DependentUpon>
@@ -133,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SistEcuaciones.resx">
       <DependentUpon>SistEcuaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TiposIntegración.resx">
+      <DependentUpon>TiposIntegración.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Unidad1.resx">
       <DependentUpon>Unidad1.cs</DependentUpon>
