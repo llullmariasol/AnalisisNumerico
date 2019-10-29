@@ -11,11 +11,6 @@ namespace Métodos
         public static double f(double x)
         {
             return (((10 * x) + 20) / ((x * x) + (4 * x) + 5)) + 2;
-            // return ((x * x) - (3 * x) + Math.Log(1 + x)) - (5 - Math.Pow(x, 0.5));
-            // return ((Math.Pow(x, 5) - 1) * (Math.Pow(Math.E, x))) - 10;
-            //return ((12.5 * (x + 2)) / ((Math.Pow(x, 2)) + (4 * x) + 5)) + 2;
-            //   return 2 * (x * x) + (2 * x);
-            // return (Math.Abs((x * x) - 4)) + (2 * x);
         }
 
         public double izq { get; set; }

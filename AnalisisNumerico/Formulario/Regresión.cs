@@ -86,10 +86,10 @@ namespace Formulario
                 }
                 A1A0 resultado = new A1A0();
                 resultado = regresiónLineal.Calcular(matriz, Convert.ToDouble(textBox3.Text));
-                string a1red = resultado.a1.ToString("0.##");
-                string a0red = resultado.a0.ToString("0.##");
+                string a1red = resultado.a1.ToString("0.####");
+                string a0red = resultado.a0.ToString("0.####");
                 label7.Text = $"y = {a1red}x + {a0red}";
-                string rred = resultado.r.ToString("0.##");
+                string rred = resultado.r.ToString("0.####");
                 label9.Text = $"r = {rred}";
                 label27.Text = resultado.Eficacia;
             }
@@ -104,19 +104,19 @@ namespace Formulario
                 for (int i = regresiónPolinomial.Grado; i > -1; i--)
                 {
                     if (i > 1)
-                        label7.Text += $"{solución[i].ToString("0.##")}(x^{i}) + ";
+                        label7.Text += $"{solución[i].ToString("0.####")}(x^{i}) + ";
                     else
                         if (i == 0)
-                            label7.Text += $"{solución[i].ToString("0.##")}";
+                            label7.Text += $"{solución[i].ToString("0.####")}";
                         else
-                            label7.Text += $"{solución[i].ToString("0.##")}x + ";
+                            label7.Text += $"{solución[i].ToString("0.####")}x + ";
                 }
 
                 double r;
                 if (regresiónPolinomial.St != 0)
                 {
                     r = Math.Sqrt((regresiónPolinomial.St - regresiónPolinomial.Sr) / regresiónPolinomial.St) * 100;
-                    label9.Text = $"r = {r.ToString("0.##")}";
+                    label9.Text = $"r = {r.ToString("0.####")}";
 
                     if (r < Convert.ToInt32(textBox3.Text))
                         label27.Text = "No es aceptable el ajuste";
