@@ -8,5 +8,16 @@ namespace Métodos
 {
     public class SimpsonSimple
     {
+        public static double f(double x)
+        {
+            return Math.Pow(x, 3) + 2;
+        }
+
+        public double Calcular(double a, double b)
+        {
+            double h;
+            h = (b - a) / 2;
+            return (h / 3) * (f(a) + 4 * f(h) + f(b));
+        }
     }
 }

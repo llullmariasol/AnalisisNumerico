@@ -20,10 +20,23 @@ namespace Formulario
 
         private void TiposIntegración_Load(object sender, EventArgs e)
         {
+          
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
             if (this.Text == "Trapezoidal Simple")
             {
                 TrapezoidalSimple trapezoidalSimple = new TrapezoidalSimple();
                 label2.Text = trapezoidalSimple.Calcular(Convert.ToDouble(textBox1.Text), Convert.ToDouble(textBox2.Text)).ToString();
+            }
+
+
+
+            if (this.Text == "Simpson 1/3 Simple")
+            {
+                SimpsonSimple simpsonSimple = new SimpsonSimple();
+                label2.Text = simpsonSimple.Calcular(Convert.ToDouble(textBox1.Text), Convert.ToDouble(textBox2.Text)).ToString();
             }
         }
     }
