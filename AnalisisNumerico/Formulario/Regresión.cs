@@ -85,7 +85,7 @@ namespace Formulario
                     regresiónLineal.SumX2 += matriz[i, 3];
                 }
                 A1A0 resultado = new A1A0();
-                resultado = regresiónLineal.Calcular(matriz, 80);
+                resultado = regresiónLineal.Calcular(matriz, Convert.ToDouble(textBox3.Text));
                 string a1red = resultado.a1.ToString("0.##");
                 string a0red = resultado.a0.ToString("0.##");
                 label7.Text = $"y = {a1red}x + {a0red}";
