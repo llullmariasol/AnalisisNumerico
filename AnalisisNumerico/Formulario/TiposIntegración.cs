@@ -39,7 +39,7 @@ namespace Formulario
             {
                 TrapezoidalMúltiple trapezoidalMultiple = new TrapezoidalMúltiple();
                 trapezoidalMultiple.n = Convert.ToInt16(textBox3.Text);
-                label2.Text = trapezoidalMultiple.Calcular(Convert.ToInt16(textBox1.Text), Convert.ToInt16(textBox2.Text)).ToString();
+                label2.Text = trapezoidalMultiple.Calcular(Convert.ToDouble(textBox1.Text), Convert.ToDouble(textBox2.Text)).ToString();
             }
 
             if (this.Text == "Simpson 1/3 Simple")
@@ -67,9 +67,9 @@ namespace Formulario
                     double h = (b - a) / n;
 
                     SimpsonTresOct simpsonTresOct = new SimpsonTresOct();
-                    simpsonMultiple.n = Convert.ToInt16(textBox3.Text) - 3;
+                    simpsonMultiple.n = n-3;
                     result1 = simpsonMultiple.Calcular(a, b - (3*h));
-                    result2 = simpsonTresOct.Calcular(Convert.ToDouble(textBox2.Text) - (3 * simpsonMultiple.h), Convert.ToDouble(textBox2.Text));
+                    result2 = simpsonTresOct.Calcular(b - (3 * h), Convert.ToDouble(textBox2.Text));
                     label2.Text = (result1 + result2).ToString();
                 }
             }
