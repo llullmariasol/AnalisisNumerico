@@ -10,7 +10,7 @@ namespace Métodos
     {
         public static double f(double x)
         {
-            return Math.Log(1 + (Math.Pow(x, 2)));
+            return (Math.Pow(Math.E, x)) * (1 - Math.Pow(0.5, 2));
         }
 
         public double Calcular(double a, double b)

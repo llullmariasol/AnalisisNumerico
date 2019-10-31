@@ -51,6 +51,7 @@ namespace Formulario
             if (this.Text == "Simpson 1/3 Múltiple")
             {
                 SimpsonMúltiple simpsonMultiple = new SimpsonMúltiple();
+                simpsonMultiple.n = Convert.ToInt16(textBox3.Text);
                 if (simpsonMultiple.n % 2 == 0) //es par
                 {
                     simpsonMultiple.n = Convert.ToInt16(textBox3.Text);
@@ -59,10 +60,16 @@ namespace Formulario
                 else //es impar, usa en conjunto Simpson 1/3 multiple y Simpson 3/8
                 {
                     double result1, result2;
+                    int n = Convert.ToInt16(textBox3.Text);
+                    
+                    double b = Convert.ToDouble(textBox2.Text);
+                    double a = Convert.ToDouble(textBox1.Text);
+                    double h = (b - a) / n;
+
                     SimpsonTresOct simpsonTresOct = new SimpsonTresOct();
                     simpsonMultiple.n = Convert.ToInt16(textBox3.Text) - 3;
-                    result1 = simpsonMultiple.Calcular(Convert.ToDouble(textBox1.Text), Convert.ToDouble(textBox2.Text) - 3);
-                    result2 = simpsonTresOct.Calcular(Convert.ToDouble(textBox2.Text) - 3, Convert.ToDouble(textBox2.Text));
+                    result1 = simpsonMultiple.Calcular(a, b - (3*h));
+                    result2 = simpsonTresOct.Calcular(Convert.ToDouble(textBox2.Text) - (3 * simpsonMultiple.h), Convert.ToDouble(textBox2.Text));
                     label2.Text = (result1 + result2).ToString();
                 }
             }
